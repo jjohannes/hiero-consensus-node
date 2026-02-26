@@ -96,6 +96,9 @@ jobs:
           setup-node: "true"
           node-version: "${{ inputs.node-version }}"
 
+      - name: Setup TestLens
+        uses: testlens-app/setup-testlens@7f83d4feb810f54f9a4ccc1df7cbc79ee3cd836b # v1.7.1
+
       - name: Full Otter Testing
         id: gradle-full-otter-tests
         if: ${{ inputs.enable-full-otter-tests && !cancelled() }}
@@ -148,6 +151,9 @@ jobs:
           gradle-cache-read-only: "false"
           setup-node: "true"
           node-version: "${{ inputs.node-version }}"
+
+      - name: Setup TestLens
+        uses: testlens-app/setup-testlens@7f83d4feb810f54f9a4ccc1df7cbc79ee3cd836b # v1.7.1
 
       - name: Fast Otter Testing
         id: gradle-fast-otter-tests
@@ -209,6 +215,9 @@ jobs:
           gradle-cache-read-only: "false"
           setup-node: "true"
           node-version: "${{ inputs.node-version }}"
+
+      - name: Setup TestLens
+        uses: testlens-app/setup-testlens@7f83d4feb810f54f9a4ccc1df7cbc79ee3cd836b # v1.7.1
 
       - name: Chaos Otter Testing
         id: gradle-chaos-otter-tests

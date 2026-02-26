@@ -79,6 +79,9 @@ jobs:
           setup-node: "true"
           node-version: "${{ inputs.node-version }}"
 
+      - name: Setup TestLens
+        uses: testlens-app/setup-testlens@7f83d4feb810f54f9a4ccc1df7cbc79ee3cd836b # v1.7.1
+
       - name: Hammer Tests
         id: gradle-hammer-tests
         run: ${GRADLE_EXEC} hammer --continue
