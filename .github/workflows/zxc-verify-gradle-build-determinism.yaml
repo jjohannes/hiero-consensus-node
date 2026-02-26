@@ -48,7 +48,7 @@ env:
 jobs:
   generate-baseline:
     name: "Gradle: Generate Baseline"
-    runs-on: hl-cn-gradle-determinism-lin-md
+    runs-on: ubuntu-latest
     outputs:
       sha: ${{ steps.commit.outputs.sha }}
       path: ${{ steps.baseline.outputs.path }}
@@ -117,7 +117,7 @@ jobs:
 
   generate-matrix:
     name: "Gradle: Generate OS Matrix"
-    runs-on: hl-cn-gradle-determinism-lin-ss
+    runs-on: ubuntu-latest
     outputs:
       os-matrix: ${{ steps.set-matrix.outputs.os-matrix }}
     steps:
@@ -169,7 +169,7 @@ jobs:
 
   verify-artifacts:
     name: "Gradle: Verify Artifacts (${{ join(matrix.os, ', ') }})"
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     needs:
       - generate-baseline
       - generate-matrix

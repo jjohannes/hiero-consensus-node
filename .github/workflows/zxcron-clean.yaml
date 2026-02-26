@@ -11,7 +11,7 @@ on:
 
 jobs:
   performance-tests-start:
-    runs-on: hl-cn-default-lin-sm
+    runs-on: ubuntu-latest
 
     steps:
       - name: Harden the runner (Audit all outbound calls)

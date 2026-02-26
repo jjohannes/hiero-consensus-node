@@ -51,7 +51,7 @@ env:
 jobs:
   generate-baseline:
     name: "Docker: Generate Baseline"
-    runs-on: hl-cn-docker-determinism-lin-md
+    runs-on: ubuntu-latest
     outputs:
       sha: ${{ steps.commit.outputs.sha }}
       sha-abbrev: ${{ steps.commit.outputs.sha-abbrev }}
@@ -198,7 +198,7 @@ jobs:
 
   verify-artifacts:
     name: "Docker: Verify Artifacts (${{ join(matrix.os, ', ') }})"
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     needs:
       - generate-baseline
     strategy:

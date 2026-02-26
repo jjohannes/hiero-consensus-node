@@ -30,7 +30,7 @@ permissions:
 jobs:
   commit-info:
     name: Get Commit Info
-    runs-on: hl-cn-default-lin-sm
+    runs-on: ubuntu-latest
     outputs:
       sha: ${{ steps.commit-info.outputs.sha }}
     steps:

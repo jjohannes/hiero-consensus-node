@@ -20,7 +20,7 @@ defaults:
 jobs:
   prepare-deploy-preview:
     name: Prepare for Deploy
-    runs-on: hl-cn-default-lin-sm
+    runs-on: ubuntu-latest
     outputs:
       version: ${{ steps.tag.outputs.version }}
       prerelease: ${{ steps.tag.outputs.prerelease }}

@@ -75,7 +75,7 @@ defaults:
 jobs:
   parameters:
     name: Workflow Parameters
-    runs-on: hl-cn-default-lin-sm
+    runs-on: ubuntu-latest
     outputs:
       solo-version: ${{ steps.params.outputs.solo-version }}
       helm-release-name: ${{ steps.params.outputs.helm-release-name }}

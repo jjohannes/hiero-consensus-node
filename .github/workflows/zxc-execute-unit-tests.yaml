@@ -65,7 +65,7 @@ env:
 jobs:
   execute-unit-tests:
     name: "Unit Tests"
-    runs-on: hl-cn-unit-test-lin
+    runs-on: ubuntu-latest
     outputs:
       failure-mode: ${{ steps.set-failure-mode.outputs.failure-mode }}
     steps:
