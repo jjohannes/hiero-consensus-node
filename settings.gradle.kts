@@ -52,12 +52,14 @@ javaModules {
 }
 
 gradle.lifecycle.beforeProject {
-    tasks.withType<Test>().configureEach {
-        develocity.testRetry {
-            maxRetries = providers.environmentVariable("CI").map { 2 }.orElse(0)
-            maxFailures = 10
-            failOnPassedAfterRetry = false
+    pluginManager.withPlugin("org.hiero.gradle.feature.test") {
+        tasks.withType<Test>().configureEach {
+            develocity.testRetry {
+                maxRetries = providers.environmentVariable("CI").map { 2 }.orElse(0)
+                maxFailures = 10
+                failOnPassedAfterRetry = false
+            }
+            reports.junitXml.mergeReruns = true
         }
-        reports.junitXml.mergeReruns = true
     }
 }
